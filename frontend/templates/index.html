@@ -1,0 +1,173 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RepSense | AI Fitness Coach</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <div class="logo">REP<span>SENSE.</span></div>
+
+        <div class="nav-links">
+            <a href="/">Home</a>
+            <a href="#workout">Workout</a>
+            <a href="#stats">Statistics</a>
+            <a href="/history">History</a>
+            <a href="/analytics">Analytics</a>
+        </div>
+
+        <div class="status">
+            <span class="status-dot"></span>
+            AI FITNESS SYSTEM
+        </div>
+    </nav>
+
+    <main class="container" id="home">
+
+        <section class="hero">
+            <div class="hero-content">
+                <p class="eyebrow">YOUR PERSONAL AI FITNESS COACH</p>
+
+                <h1>Train smarter.<br>
+                    <span>Move better.</span>
+                </h1>
+
+                <p class="hero-description">
+                    Track your exercises, analyze your posture and
+                    improve your workout performance with AI-powered
+                    real-time feedback.
+                </p>
+
+                <button class="start-btn" onclick="startWorkout()">
+                    Start Workout <span>→</span>
+                </button>
+            </div>
+
+            <div class="hero-card">
+                <div class="hero-icon">✦</div>
+                <h3>AI Powered</h3>
+                <p>Real-time pose detection and movement analysis.</p>
+            </div>
+        </section>
+
+        <section class="stats-section" id="stats">
+
+            <div class="section-heading">
+                <div>
+                    <p class="eyebrow">YOUR PERFORMANCE</p>
+                    <h2>Workout Overview</h2>
+                </div>
+                <span class="live-label">● SYSTEM READY</span>
+            </div>
+
+            <div class="stats-grid">
+
+                <div class="stat-card">
+                    <p>Total Reps</p>
+                    <h2 id="repCount">00</h2>
+                    <span>Exercise repetitions</span>
+                </div>
+
+                <div class="stat-card">
+                    <p>Calories Burned</p>
+                    <h2 id="calories">0.0</h2>
+                    <span>Estimated kcal</span>
+                </div>
+
+                <div class="stat-card">
+                    <p>Duration</p>
+                    <h2 id="duration">00:00</h2>
+                    <span>Workout time</span>
+                </div>
+
+                <div class="stat-card">
+                    <p id="angleLabel">Joint Angle</p>
+                    <h2 id="kneeAngle">--°</h2>
+                    <span>Live measurement</span>
+                </div>
+
+                <div class="stat-card">
+                    <p>Form Score</p>
+                    <h2 id="formScore">--%</h2>
+                    <span>Estimated movement score</span>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="workout-section" id="workout">
+
+            <div class="section-heading">
+                <div>
+                    <p class="eyebrow">LIVE SESSION</p>
+                    <h2>AI Workout Studio</h2>
+                </div>
+                <span class="live-label">CAMERA PREVIEW</span>
+            </div>
+
+            <div class="workout-grid">
+
+                <div class="camera-card">
+                    <div class="camera-placeholder" id="cameraArea">
+                        <div class="camera-symbol">◎</div>
+                        <h3>Ready to begin?</h3>
+                        <p>Your live camera feed will appear here.</p>
+                        <button class="start-btn" onclick="startWorkout()">
+                            Enable Camera
+                        </button>
+                    </div>
+                </div>
+
+                <div class="feedback-card">
+                    <p class="eyebrow">AI COACH</p>
+                    <h3>Movement Feedback</h3>
+
+                    <div class="feedback-box">
+                        <span class="feedback-indicator"></span>
+                        <p id="feedback">Waiting for workout...</p>
+                    </div>
+
+                    <div class="exercise-info">
+                        <p>Select Exercise</p>
+                        <select id="exerciseSelect">
+                            <option value="squat">Squats</option>
+                            <option value="pushup">Push-ups</option>
+                            <option value="bicep_curl">Bicep Curls</option>
+                        </select>
+                    </div>
+
+                    <div class="exercise-info">
+                        <p>Current Exercise</p>
+                        <h3 id="currentExercise">Squats</h3>
+                    </div>
+
+                    <div class="exercise-info">
+                        <p>Detection Engine</p>
+                        <h3>MediaPipe Pose</h3>
+                    </div>
+
+                    <button class="stop-btn" onclick="stopWorkout()">
+                        Stop Workout
+                    </button>
+                </div>
+
+            </div>
+        </section>
+
+        <footer>
+            <div class="logo">REP<span>SENSE.</span></div>
+            <p>AI-powered fitness tracking system.</p>
+            <p>Built with Python, OpenCV & MediaPipe.</p>
+        </footer>
+
+    </main>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+
+</body>
+</html>
