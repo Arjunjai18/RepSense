@@ -798,3 +798,29 @@ footer p {
         scroll-behavior: auto !important;
     }
 }
+/* Developer Credit */
+.developer-credit {
+    margin-top: 25px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.developer-credit p {
+    margin: 8px 0;
+    font-size: 14px;
+}
+
+.developer-credit h3 {
+    margin: 8px 0;
+    font-size: 22px;
+    color: #00e5a8;
+}
+
+.developer-credit a {
+    color: #00e5a8;
+    text-decoration: none;
+}
+
+.developer-credit a:hover {
+    text-decoration: underline;
+}
