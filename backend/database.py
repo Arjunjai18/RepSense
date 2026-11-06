@@ -34,11 +34,10 @@ def supabase_request(method, endpoint, payload=None):
         data=json.dumps(payload).encode("utf-8") if payload is not None else None,
         method=method,
         headers={
-            "apikey": key,
-            "Authorization": f"Bearer {key}",
-            "Content-Type": "application/json",
-            "Prefer": "return=minimal"
-        }
+    "apikey": key,
+    "Content-Type": "application/json",
+    "Prefer": "return=minimal"
+}
     )
 
     try:
